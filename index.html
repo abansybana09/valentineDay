@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Happy Valentine's Day 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- Sparkle Cursor Trail -->
+    <canvas id="sparkleCanvas"></canvas>
+
+    <!-- ============ PAGE 1: OPENING ============ -->
+    <section class="page page-1 active" id="page1">
+        <div class="envelope-container">
+            <div class="envelope" id="envelope" onclick="openEnvelope()">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="letter-peek">💌</div>
+                </div>
+                <div class="heart-seal">❤️</div>
+            </div>
+            <p class="click-hint">✨ Klik amplop untuk membuka ✨</p>
+        </div>
+    </section>
+
+    <!-- ============ PAGE 2: GREETING ============ -->
+    <section class="page page-2" id="page2">
+        <div class="greeting-content">
+            <div class="heart-burst" id="heartBurst"></div>
+            <h1 class="title-main">
+                <span class="title-line line-1">Happy</span>
+                <span class="title-line line-2">Valentine's</span>
+                <span class="title-line line-3">Day</span>
+            </h1>
+            <div class="heart-divider">
+                <span>💕</span>
+                <div class="line"></div>
+                <span class="big-heart">💖</span>
+                <div class="line"></div>
+                <span>💕</span>
+            </div>
+            <p class="subtitle">14 Februari 2026</p>
+            <button class="btn-next glow-btn" onclick="goToPage(3)">
+                <span>Buka Pesan Spesial</span>
+                <div class="btn-sparkle"></div>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============ PAGE 3: LOVE LETTER ============ -->
+    <section class="page page-3" id="page3">
+        <div class="letter-container">
+            <div class="letter-paper">
+                <div class="letter-decoration top-left">🌹</div>
+                <div class="letter-decoration top-right">🌹</div>
+                <div class="letter-header">
+                    <h2>Untuk Seseorang yang Spesial</h2>
+                    <div class="letter-heart-line">
+                        <span>♥</span><span>♥</span><span>♥</span>
+                    </div>
+                </div>
+                <div class="letter-body" id="letterBody">
+                    <p class="letter-text" id="typedText"></p>
+                    <span class="cursor-blink">|</span>
+                </div>
+                <div class="letter-footer">
+                    <p class="letter-sign">Dengan Cinta,</p>
+                    <p class="letter-sign-name">💝 Someone Special 💝</p>
+                </div>
+                <div class="letter-decoration bottom-left">🌹</div>
+                <div class="letter-decoration bottom-right">🌹</div>
+            </div>
+            <button class="btn-next glow-btn" onclick="goToPage(4)" style="margin-top: 30px;">
+                <span>Lanjut ✨</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============ PAGE 4: QUESTION ============ -->
+    <section class="page page-4" id="page4">
+        <div class="question-container">
+            <div class="roses-animation">
+                <div class="rose r1">🌹</div>
+                <div class="rose r2">🌹</div>
+                <div class="rose r3">🌹</div>
+                <div class="rose r4">🌹</div>
+                <div class="rose r5">🌹</div>
+            </div>
+            <h2 class="question-title">Maukah kamu jadi</h2>
+            <h1 class="valentine-text">Valentine-ku? 💘</h1>
+            <div class="btn-group">
+                <button class="btn-yes" id="btnYes" onclick="sayYes()">
+                    Ya, Mau! 💖
+                </button>
+                <button class="btn-no" id="btnNo" onmouseover="moveNoButton()" onclick="moveNoButton()">
+                    Tidak 💔
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PAGE 5: CELEBRATION ============ -->
+    <section class="page page-5" id="page5">
+        <canvas id="fireworksCanvas"></canvas>
+        <div class="celebration-content">
+            <div class="happy-emoji">🥰</div>
+            <h1 class="celebrate-title">Yeayyy! 🎉</h1>
+            <h2 class="celebrate-subtitle">Aku sangat bahagia! 💕</h2>
+            <div class="couple-hearts">
+                <span class="heart-left">💖</span>
+                <span class="plus">+</span>
+                <span class="heart-right">💖</span>
+                <span class="equals">=</span>
+                <span class="heart-forever">💞</span>
+            </div>
+            <p class="forever-text">Selamanya bersama 💍</p>
+            <div class="photo-frame">
+                <div class="frame-inner">
+                    <p>📸</p>
+                    <p class="frame-text">Our Beautiful Story</p>
+                    <p class="frame-date">14.02.2026</p>
+                </div>
+            </div>
+            <button class="btn-restart glow-btn" onclick="restart()">
+                <span>Ulangi 🔄</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Background Music Toggle -->
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+        🎵
+    </button>
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
